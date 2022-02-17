@@ -14,25 +14,22 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-
-
-router.get("/signup", isLoggedOut, (req, res) => {
+router.get("/auth/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post("/auth/signup", isLoggedOut, (req, res) => {
   const { username, password } = req.body;
-  
-    User.create({ username, password })
-      .then((user) => {
-        console.log('user created', user.name);
-        res.redirect('/create-profile');
-      })
-      .catch((err) => {
-        next(err)
-        res.redirect('/celebrities/create');
-      });
 
+  User.create({ username, password })
+    .then((user) => {
+      console.log("user created", user.name);
+      res.redirect("/create-profile");
+    })
+    .catch((err) => {
+      next(err);
+      //res.redirect("/celebrities/create");
+    });
 
   if (!username) {
     return res
