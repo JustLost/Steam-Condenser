@@ -22,6 +22,17 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password } = req.body;
+  
+    User.create({ username, password })
+      .then((user) => {
+        console.log('user created', user.name);
+        res.redirect('/create-profile');
+      })
+      .catch((err) => {
+        next(err)
+        res.redirect('/celebrities/create');
+      });
+});
 
   if (!username) {
     return res
