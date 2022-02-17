@@ -32,7 +32,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         next(err)
         res.redirect('/celebrities/create');
       });
-});
+
 
   if (!username) {
     return res
