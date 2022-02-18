@@ -12,15 +12,14 @@
     <input type="password" name="password" />
   </label>
 
-  <label for='imageUrl'>Image</label>
-    <input type='file' name='image' class='form-control' />
+  <hr />
 
-    {{!-- <label>Image:
-    <input type='file' name='imageUrl'/>
-    </label> --}}
 
-    <button type="submit">Submit</button>
-  </form>
+  <label for="imageUrl">Profile picture:</label>
+  <input type="file" name="image" class="form-control" />
+
+  <button type="submit">Submit</button>
+</form>
 
 {{#if errorMessage}}
   {{errorMessage}}
