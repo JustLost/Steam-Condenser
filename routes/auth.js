@@ -14,11 +14,13 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+const fileUploader = require("../config/cloudinary.config");
+
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post("/signup", isLoggedOut, fileUploader.single('image'), (req, res) => {
   const { username, password, email} = req.body;
 
   if (!username) {
@@ -63,7 +65,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
         return User.create({
           username,
           password: hashedPassword,
-          email
+          email,
+          imageUrl: req.file.path,
+          /* imageUrl: "adfbdgb", */
         });
       })
       .then((user) => {
