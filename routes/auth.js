@@ -126,7 +126,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       if (!user) {
         return res
           .status(400)
-          .render("auth/login", { errorMessage: "Wrong credentials." });
+          .render("auth/login", { errorMessage: "Wrong credentials. Don't have an account?" });
       }
 
       // If user is found based on the username, check if the in putted password matches the one saved in the database
