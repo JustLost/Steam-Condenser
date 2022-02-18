@@ -23,6 +23,7 @@ const userSchema = new Schema(
     },
     imageUrl: {
       type: String,
+      default: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free[…]e=images&cd=vfe&ved=0CAsQjRxqFwoTCMjeyL_FifYCFQAAAAAdAAAAABAD'
     },
   },
   {

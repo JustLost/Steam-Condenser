@@ -22,6 +22,11 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 router.post("/signup", isLoggedOut, fileUploader.single('image'), (req, res) => {
   const { username, password, email} = req.body;
+  let imageUrl
+  if (req.file) {
+    imageUrl = req.file.path;
+  }
+
 
   if (!username) {
     return res
@@ -66,8 +71,7 @@ router.post("/signup", isLoggedOut, fileUploader.single('image'), (req, res) => 
           username,
           password: hashedPassword,
           email,
-          imageUrl: req.file.path,
-          /* imageUrl: "adfbdgb", */
+          imageUrl,
         });
       })
       .then((user) => {
