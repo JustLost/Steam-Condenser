@@ -37,6 +37,14 @@ app.use("/auth", authRoutes);
 const profileRoute = require("./routes/profile");
 app.use("/", profileRoute);
 
+//Mongo Atlas
+const Cors = require("cors");
+const BodyParser = require("body-parser");
+
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({ extended: true }));
+app.use(Cors());
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
@@ -50,10 +58,15 @@ module.exports = app;
     let response = await axios.get(
     "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=EEC896FE53DDDDBA3D5AE5C436FE3EF7&format=json"
     );
-    for (let i = 0; i < 170; i++) {
+    for (let i = 0; i < 12; i++) {
     let gameDetails = await axios.get(
-        "https://store.steampowered.com/api/appdetails",
-        { params: { appids: response.data.applist.apps[i].appid } }
+      "https://store.steampowered.com/api/appdetails",
+      {
+        params: {
+          appids: response.data.applist.apps[i].appid,
+          key: process.env.STEAMKEY
+        }
+      }
     );
     if (gameDetails.data[response.data.applist.apps[i].appid].success) {
         let data = gameDetails.data[response.data.applist.apps[i].appid].data;
