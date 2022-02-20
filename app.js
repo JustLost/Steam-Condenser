@@ -56,15 +56,15 @@ module.exports = app;
     }
     
     let response = await axios.get(
-    "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?key=EEC896FE53DDDDBA3D5AE5C436FE3EF7&format=json"
+    "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json"
     );
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 100000; i++) {
     let gameDetails = await axios.get(
       "https://store.steampowered.com/api/appdetails",
       {
         params: {
           appids: response.data.applist.apps[i].appid,
-          key: process.env.STEAMKEY
+          key:process.env.STEAMKEY
         }
       }
     );
@@ -79,19 +79,19 @@ module.exports = app;
         let header_image = data.header_image;
         let release_date = data.release_date;
         Game.create({
-        steam_appid,
-        name,
-        genres,
-        about_the_game,
-        header_image,
-        release_date,
+          steam_appid,
+          name,
+          genres,
+          about_the_game,
+          header_image,
+          release_date,
         })
         .then((game) => {
-            console.log("game created", game.name);
-            //res.redirect("");
+          console.log("game created", game.name);
+          //res.redirect("");
         })
         .catch((err) => {
-            console.log(err);
+          console.log(err);
         });
     }
     }

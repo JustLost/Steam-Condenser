@@ -1,0 +1,49 @@
+<h2>Edit Profile</h2>
+<div class="row">
+  <div class="col-md-6">
+
+    <form
+      action="/profile/edit/{{_id}}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="form-group">
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          value="{{email}}"
+        />
+      </div>
+
+      <div class="form-group">
+
+        <label for="name">User name</label>
+        <input
+          name="user"
+          class="form-control"          
+          value="{{username}}"
+        />
+      </div>
+
+      <div class="form-group">
+
+        <label for="image">Image</label>
+        <input type="file" name="image" class="form-control" />
+
+        <input
+          type="file"
+          name="existingImage"
+          class="form-control"
+          value="{{imageUrl}}"
+          hidden
+        />
+
+      </div>
+
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>
