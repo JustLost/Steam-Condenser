@@ -48,7 +48,16 @@ router.get("/get/:id", async (request, response) => {
     response.status(500).send({ message: e.message });
   }
 });
-//
+
+//Game page
+router.get("/game", async (request, response) => {
+  try {
+    let result = await collection.findOne({ name: request.query.name });
+    response.render("game", { result });
+  } catch (e) {
+    response.status(500).send({ message: e.message });
+  }
+})
 
 module.exports = router;
 

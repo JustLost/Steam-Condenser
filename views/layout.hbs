@@ -28,9 +28,11 @@
             <p><a href="/">Home</a></p>
           </li>
           <li>
-            <input id="game-search" type="text" placeholder="Search game">
-            <ul id="games"></ul>
-            <button type="submit">Search</button>
+            <form action="/game" method="get">
+              <input name="name" id="game-search" type="text" placeholder="Search game">
+              <ul id="games"></ul>
+              <button type="submit">Search</button>
+            </form>
           </li>
           <li>
             <p><a href="/profile">Profile</a></p>
