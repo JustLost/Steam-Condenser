@@ -58,6 +58,9 @@ module.exports = app;
     let response = await axios.get(
     "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json"
     );
+    console.log(response.data.applist)
+
+
     for (let i = 0; i < 100000; i++) {
     let gameDetails = await axios.get(
       "https://store.steampowered.com/api/appdetails",
@@ -68,7 +71,7 @@ module.exports = app;
         }
       }
     );
-    if (gameDetails.data[response.data.applist.apps[i].appid].success) {
+    if (gameDetails.data[response.data.applist.apps[i].appid].success && (gameDetails.data[response.data.applist.apps[i].appid].data.type === "game") ) {
         let data = gameDetails.data[response.data.applist.apps[i].appid].data;
         let steam_appid = data.steam_appid;
         //console.log(gameDetails[response.data.applist.apps[i].appid]);
