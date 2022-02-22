@@ -64,25 +64,15 @@ router.post(
 
 router.get("/profile/:id/recommended",(req, res, next) => {
   const {id} = req.params
-  let url = "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?"
-
-  axios.get(updatedUrl)
-
-
-  User.findById(id)
-  .then((foundedUser) => {
-    foundedUser.gameTags.forEach(tag => {
-      url = url + `tag=${tag}&`;
+  
+  User.findOneAndUpdate(id)
+  .then((foundUser) => {
+    foundUser.gameTags.forEach(tag => {
+      Game.find()
     })
-    return url
+    
   })
-  .then((updatedUrl) => {
-    axios.get(updatedUrl)
-    .then( apiResponse => {
-      console.log(apiResponse.data.applist.apps[0])
-      res.render('recommended-games', {games: apiResponse.data.applist.apps})
-    })
-  })
+  
 }); 
 
 
