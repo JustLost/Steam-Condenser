@@ -66,6 +66,32 @@ router.post(
   }
 );
 
+/* router.get("/profile", (req, res, next) => {
+  // const { id } = req.params;
+
+  User.findByIdAndDelete(id)
+    .then((deleted) => {
+      console.log(deleted)
+      res.redirect('/');
+    })
+    .catch((err) => {
+      next(err);
+    });
+}); */
+
+/* router.post('/profile/:id/delete', (req, res, next) => {
+  const { id } = req.params;
+
+  User.findByIdAndDelete(id)
+    .then((deleted) => {
+      console.log(deleted)
+      res.redirect(`/`);
+    })
+    .catch((err) => {
+      next(err);
+    });
+}); */
+
 //end
 
 // router.get("/profile/:id/recommended",(req, res, next) => {
@@ -98,12 +124,29 @@ router.post(
 //   })
 // }); 
 
+router.get("/profile/:id/delete",(req, res, next) => {
+  // const {id} = req.params
+
+  res.render('delete-profile')
+  
+  /* User.findById(id)
+  .then((foundUser) => {
+   console.log(foundUser)
+    
+  }) */
+  // .then((gamesList) => {
+    // console.log(gamesList)
+    // res.render("recommended-games", {games: gamesList})
+  // })
+  
+}); 
+
 router.get("/profile/:id/recommended",(req, res, next) => {
   const {id} = req.params
   
   User.findById(id)
   .then((foundUser) => {
-   console.log(foundUser.gameTags)
+  //  console.log(foundUser.gameTags)
    return Game.find({genres: {$elemMatch: {description: { $in: foundUser.gameTags }}}}).limit(10)
     
   })

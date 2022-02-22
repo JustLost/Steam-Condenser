@@ -1,10 +1,15 @@
 <h1>User profile</h1>
 
 <div>
-  <img src="{{user.imageUrl}}" alt="{{user.username}}" style="width: 150px; max-height: 280px" />
+  <img
+    src="{{user.imageUrl}}"
+    alt="{{user.username}}"
+    style="width: 150px; max-height: 280px"
+  />
 
   <h2>{{user.username}}</h2>
 
   <button type="submit"><a href="/profile/edit">Add your game tags</a></button>
-</div>
 
+  <button type="submit"><a href="/profile/delete">Delete</a></button>
+</div>
