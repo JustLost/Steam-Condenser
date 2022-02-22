@@ -25,25 +25,31 @@ router.get("/create-profile", async (req, res, next) => {
 });
 
 //Edit profile
-router.get("/profile/edit/:id", (req, res, next) => {
-  User.findById(req.params.id)
+router.get("/profile/edit", (req, res, next) => {
+  const user = req.session.user;
+  res.render("profile-edit", { user });
+
+
+  /* User.findById(req.params.id)
     .then((profile) => {
       res.render("profile-edit", profile);
     })
-    .catch((err) => next(err));
+    .catch((err) => next(err));  */
 });
 
+
 router.post(
-  "/profile/edit/:id",
+  "/profile/edit",
   fileUploader.single("image"),
   (req, res, next) => {
-    const { id } = req.params;
-    const { user, email, existingImage, gameTags } = req.body;
+    const user = req.session.user;
+    /* const { id } = req.params; */
+    const { username, email, existingImage, gameTags } = req.body;
 
-    console.log("user:", user);
+    /* console.log("user:", user); */
 
     let imageUrl;
-    let username = user;
+    /* let username = user; */
 
     if (req.file) {
       imageUrl = req.file.path;
@@ -51,7 +57,7 @@ router.post(
       imageUrl = existingImage;
     }
     
-    User.findByIdAndUpdate(id, { username, email, imageUrl, gameTags })
+    User.findByIdAndUpdate(user._id, { username, email, imageUrl, gameTags })
       .then((user) => {
         req.session.user = user;
         res.redirect(`/profile/${user._id}/recommended`);

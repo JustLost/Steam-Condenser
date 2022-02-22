@@ -13,11 +13,14 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
-{{!-- mongoatlas search - jquery --}}
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {{! mongoatlas search - jquery }}
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-{{!-- end --}}
+    {{! end }}
   </head>
 
   <body>
@@ -29,7 +32,12 @@
           </li>
           <li>
             <form action="/game" method="get">
-              <input name="name" id="game-search" type="text" placeholder="Search game">
+              <input
+                name="name"
+                id="game-search"
+                type="text"
+                placeholder="Search game"
+              />
               <ul id="games"></ul>
               <button type="submit">Search</button>
             </form>
@@ -37,49 +45,36 @@
           <li>
             <p><a href="/profile">Profile</a></p>
           </li>
-          <li>
+          {{! <li>
             <p><a href="/create-profile">Create Profile</a></p>
-          </li>
+          </li> }}
           <li>
             <form action="/auth/logout" method="post">
               <button>Logout</button></form>
           </li>
-
         {{else}}
           <li>
             <p><a href="/auth/signup">Sign Up</a></p>
           </li>
           <li>
             <p><a href="/auth/login">Login</a></p>
-          </li>          
+          </li>
         {{/if}}
       </ul>
       <script>
-        $(document).ready(function () {
-        $("#game-search").autocomplete({
-            source: async function(request, response) {
-                let data = await fetch(`http://localhost:3000/search?query=${request.term}`)
-                    .then(results => results.json())
-                    .then(results => results.map(result => { 
-                        return { label: result.name, value: result.name, id: result._id };
-                    }));
-                response(data);
-            },
-            minLength: 2,
-            select: function(event, ui) {
-                fetch(`http://localhost:3000/get/${ui.item.id}`)
-                    .then(result => result.json())
-                    .then(result => {
-                        $("#games").empty();
-                        result.games.forEach(game => {
-                            $("#games").append(`<li>${game}</li>`);
-                        });
-                    });
-            }
-        });
-    });
+        $(document).ready(function () { $("#game-search").autocomplete({ source:
+        async function(request, response) { let data = await
+        fetch(`http://localhost:3000/search?query=${request.term}`)
+        .then(results => results.json()) .then(results => results.map(result =>
+        { return { label: result.name, value: result.name, id: result._id };
+        })); response(data); }, minLength: 2, select: function(event, ui) {
+        fetch(`http://localhost:3000/get/${ui.item.id}`) .then(result =>
+        result.json()) .then(result => { $("#games").empty();
+        result.games.forEach(game => { $("#games").append(`<li>${game}</li>`);
+        }); }); } }); });
       </script>
     </nav>
+
 
     {{{body}}}
 

@@ -3,25 +3,21 @@
   <div class="col-md-6">
 
     <form
-      action="/profile/edit/{{_id}}"
+      action="/profile/edit"
       method="post"
       enctype="multipart/form-data"
     >
       <div class="form-group">
 
         <label for="email">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          name="email"
-          value="{{email}}"
+        <input type="email" class="form-control" name="email" value="{{user.email}}"
         />
       </div>
 
       <div class="form-group">
 
         <label for="name">User name</label>
-        <input name="user" class="form-control" value="{{username}}" />
+        <input name="username" class="form-control" value="{{user.username}}" />
       </div>
 
       <div class="form-group">
@@ -29,13 +25,7 @@
         <label for="image">Image</label>
         <input type="file" name="image" class="form-control" />
 
-        <input
-          type="file"
-          name="existingImage"
-          class="form-control"
-          value="{{imageUrl}}"
-          hidden
-        />
+        <input type="file" name="existingImage" class="form-control" value="{{imageUrl}}" hidden />
 
       </div>
 
@@ -55,10 +45,7 @@
 
         <div>
           <input
-            type="checkbox"
-            id="adventure"
-            name="gameTags"
-            value="Adventure"
+            type="checkbox"  id="adventure" name="gameTags" value="Adventure"
           />
           <label>Adventure</label>
         </div>
@@ -80,20 +67,14 @@
 
         <div>
           <input
-            type="checkbox"
-            id="platformer"
-            name="gameTags"
-            value="Platformer"
+            type="checkbox" id="platformer" name="gameTags" value="Platformer"
           />
           <label>Platformer</label>
         </div>
 
         <div>
           <input
-            type="checkbox"
-            id="strategy"
-            name="gameTags"
-            value="Strategy"
+            type="checkbox" id="strategy" name="gameTags" value="Strategy"
           />
           <label>Strategy</label>
         </div>
@@ -120,20 +101,14 @@
 
         <div>
           <input
-            type="checkbox"
-            id="multiplayer"
-            name="gameTags"
-            value="Multiplayer"
+            type="checkbox" id="multiplayer" name="gameTags" value="Multiplayer"
           />
           <label>Multiplayer</label>
         </div>
 
         <div>
           <input
-            type="checkbox"
-            id="singleplayer"
-            name="gameTags"
-            value="Singleplayer"
+            type="checkbox" id="singleplayer" name="gameTags" value="Singleplayer"
           />
           <label>Singleplayer</label>
         </div>
