@@ -15,10 +15,16 @@ const client = new MongoClient(MONGO_URI);
 let collection;
 
 const Game = require("../models/Game.model");
+
+
+(async () => {
+  await client.connect();
+  collection = client.db("project2").collection("topgames");
+})();
+
 router.get("/search", async (request, response) => {
   try {
-    await client.connect();
-    collection = client.db("project2").collection("games");
+    
     let result = await collection
       .aggregate([
         {
@@ -52,12 +58,16 @@ router.get("/get/:id", async (request, response) => {
 //Game page
 router.get("/game", async (request, response) => {
   try {
+    console.log(request.query.name)
     let result = await collection.findOne({ name: request.query.name });
     response.render("game", { result });
+    console.log(result)
   } catch (e) {
     response.status(500).send({ message: e.message });
   }
 })
+
+
 
 module.exports = router;
 

@@ -54,33 +54,38 @@ module.exports = app;
     if( await Game.countDocuments({})){
         return
     }
-    
+
     let response = await axios.get(
-    "http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json"
+      "https://steamspy.com/api.php?request=top100in2weeks"
     );
-    console.log(response.data.applist)
+    //console.log(Object.values(response.data)[0])
 
+    let games = Object.values(response.data); 
 
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 100; i++) {
     let gameDetails = await axios.get(
       "https://store.steampowered.com/api/appdetails",
       {
         params: {
-          appids: response.data.applist.apps[i].appid,
-          key:process.env.STEAMKEY
+          appids: games[i].appid,
+          key:process.env.STEAMKEY,
+          language: "eng",
         }
       }
-    );
-    if (gameDetails.data[response.data.applist.apps[i].appid].success && (gameDetails.data[response.data.applist.apps[i].appid].data.type === "game") ) {
-        let data = gameDetails.data[response.data.applist.apps[i].appid].data;
+    );    
+    await sleep(500);
+    if (gameDetails.data[games[i].appid].success && (gameDetails.data[games[i].appid].data.type === "game") ) {
+        let data = gameDetails.data[games[i].appid].data;
         let steam_appid = data.steam_appid;
-        //console.log(gameDetails[response.data.applist.apps[i].appid]);
-        console.log(data.steam_appid);
+        //console.log(gameDetails[games[i].appid]);        
         let name = data.name;
         let genres = data.genres;
         let about_the_game = data.about_the_game;
         let header_image = data.header_image;
         let release_date = data.release_date;
+        //console.log(data.metacritic)
+        let metacritic_score = data.metacritic ? data.metacritic.score : 0;
+        let website = data.website;
         Game.create({
           steam_appid,
           name,
@@ -88,14 +93,20 @@ module.exports = app;
           about_the_game,
           header_image,
           release_date,
+          metacritic_score,
+          website,
         })
-        .then((game) => {
-          console.log("game created", game.name);
-          //res.redirect("");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+          .then((game) => {
+            console.log("created:", game.name);
+            //res.redirect("");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     }
     }
 })();
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

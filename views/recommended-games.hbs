@@ -1,7 +1,6 @@
 <h1>Recommended Games List</h1>
 
 {{#each games}}
-{{!-- <p>{{name}}</p>       --}}
 <img src="{{header_image}}" alt="{{name}}" style="margin: 10px">
-<a href="">{{name}}</a>
+<a href="http://localhost:3000/game?name={{name}}">{{name}}</a>
 {{/each}}

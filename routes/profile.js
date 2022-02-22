@@ -108,7 +108,7 @@ router.get("/profile/:id/recommended",(req, res, next) => {
     
   })
   .then((gamesList) => {
-    console.log(gamesList)
+    //console.log(gamesList)
     res.render("recommended-games", {games: gamesList})
   })
   
