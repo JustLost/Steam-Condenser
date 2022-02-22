@@ -62,18 +62,50 @@ router.post(
 
 //end
 
+// router.get("/profile/:id/recommended",(req, res, next) => {
+//   const {id} = req.params
+//   // Game.find({genres:{$elemMatch: {$or:[{description:'Adventure'}, {description:'Indie'}]}}})
+//   // .then((gameList) => {
+//   //   console.log(gameList)
+//   // })
+
+//   let query = ""
+//   User.findById(id)
+//   .then((foundUser) => {
+//     foundUser.gameTags.forEach((tag, i) => {
+//       if(i == 0){
+//         query = `{ description: "${tag}" }`;
+//       } else {
+//         query = query + `,{description:"${tag}"}`;
+//       }          
+//     })
+//     return query;
+//   })
+//   .then((query) => {
+//     console.log(typeof(query))
+//     const fullQuery = {genres:{$elemMatch: {$or:[query]}}}
+//     console.log(fullQuery)
+//     return Game.find(fullQuery)
+//   })
+//   .then((gameList) => {
+//     console.log(gameList)
+//   })
+// }); 
+
 router.get("/profile/:id/recommended",(req, res, next) => {
   const {id} = req.params
   
-  User.findOneAndUpdate(id)
+  User.findById(id)
   .then((foundUser) => {
-    foundUser.gameTags.forEach(tag => {
-      Game.find()
-    })
+   console.log(foundUser.gameTags)
+   return Game.find({genres: {$elemMatch: {description: { $in: foundUser.gameTags }}}}).limit(10)
     
+  })
+  .then((gamesList) => {
+    console.log(gamesList)
+    res.render("recommended-games", {games: gamesList})
   })
   
 }); 
-
 
 module.exports = router;
