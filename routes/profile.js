@@ -112,8 +112,9 @@ router.post('/profile/:id/delete', (req, res, next) => {
     });
 });
 
-router.get("/profile/:id/recommended",(req, res, next) => {
-  const {id} = req.params
+router.get("/profile/:id/recommended", (req, res, next) => {
+  const user = req.session.user;
+  const {id} = req.params;
   
   User.findById(id)
   .then((foundUser) => {
@@ -123,9 +124,8 @@ router.get("/profile/:id/recommended",(req, res, next) => {
   })
   .then((gamesList) => {
     //console.log(gamesList)
-    res.render("recommended-games", {games: gamesList})
+    res.render("recommended-games", {games: gamesList, user})
   })
-  
 }); 
 
 module.exports = router;
