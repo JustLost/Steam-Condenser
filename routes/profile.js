@@ -100,9 +100,11 @@ router.get("/profile/:id/delete",(req, res, next) => {
 
 router.post('/profile/:id/delete', (req, res, next) => {
   const { id } = req.params;
+  
 
   User.findByIdAndDelete(id)
     .then(() => {
+      req.session.destroy();
       res.redirect(`/auth/login`);
     })
     .catch((err) => {
