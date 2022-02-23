@@ -3,10 +3,10 @@ const router = require("express").Router();
 const isLoggedIn =require("./../middleware/isLoggedIn")
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  const user = req.session.user;
-  res.render("index", {user});
-});
+// router.get("/", (req, res, next) => {
+//   const user = req.session.user;
+//   res.render("index", {user});
+// });
 
 // MongoAtlas for autocomplete search
 const { MongoClient, ObjectId } = require("mongodb");
@@ -67,7 +67,17 @@ router.get("/game", async (request, response) => {
   }
 })
 
-
+//trending
+router.get("/", async (request, response) => {  
+  try {
+    const user = request.session.user;
+    let result = await collection.find().sort({ metacritic_score: 1 }).limit(7);
+    response.render("index", {result, user})
+    console.log(result)
+  } catch (e) {
+    response.status(500).send({ message: e.message });
+  }
+})
 
 module.exports = router;
 

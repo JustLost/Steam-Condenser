@@ -50,6 +50,12 @@ require("./error-handling")(app);
 
 module.exports = app;
 
+app.use(function (req, res, next) {
+  console.log(app.locals);
+  app.locals.user = req.session.user;
+  next();
+});
+
 (async () => {
     if( await Game.countDocuments({})){
         return
