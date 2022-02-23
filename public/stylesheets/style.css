@@ -6,23 +6,18 @@ body {
   color: white;
 }
 
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
 .flex-row-class {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid orange 1px;
 }
+
 .flex-ul {
-  gap: 3rem;
+  border-bottom: none;
+  gap: 1rem;
 }
 
 .search-bar{
@@ -30,12 +25,18 @@ h1 {
   flex-direction: row;
 }
 
-a {
+nav a {
   text-decoration: none;
+  color: orange;
 }
 
 ul {
   list-style-type: none;
+}
+
+nav button{
+  color: red;
+  background-color:
 }
 
 .carousel-inner > .item > img {
