@@ -11,5 +11,7 @@
 
   <button type="submit"><a href="/profile/edit">Add your game tags</a></button>
 
-  <button type="submit"><a href="/profile/delete">Delete</a></button>
+  <form action='/profile/{{user._id}}/delete' method='post'>
+    <button>Delete</button>
+  </form>
 </div>
