@@ -69,16 +69,28 @@ router.get("/game", async (request, response) => {
 })
 
 //trending
+// router.get("/", async (request, response) => {  
+//   try {
+//     const user = request.session.user;
+//     let result = await collection.find();
+//     console.log("resuuuuult:", result.data);
+//     response.render("index", {result, user});
+    
+//   } catch (e) {
+//     response.status(500).send({ message: e.message });
+//   }
+// })
 router.get("/", async (request, response) => {  
   try {
     const user = request.session.user;
-    let result = await collection.find().sort({ metacritic_score: 1 }).limit(7);
-    response.render("index", {result, user})
+    const result = await Game.find().sort({ metacritic_score: 1 }).limit(10);
     console.log(result)
+    response.render("index", { result, user });
   } catch (e) {
     response.status(500).send({ message: e.message });
   }
 })
+
 
 module.exports = router;
 

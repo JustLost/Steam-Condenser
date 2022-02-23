@@ -11,3 +11,11 @@ h1 {
   color: 15px;
 }
 
+.carousel-inner > .item > img {
+  width:640px;
+  height:360px;
+}
+.carousel {
+  width:640px;
+  height:360px;
+}
