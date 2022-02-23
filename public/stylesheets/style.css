@@ -38,6 +38,9 @@ ul {
   list-style-type: none;
 }
 
+
+
+
 .carousel-inner > .item > img {
   width:640px;
   height:360px;
@@ -45,4 +48,33 @@ ul {
 .carousel {
   width:640px;
   height:360px;
+}
+
+.carousel-button {
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.205);
+  color: white;
+  border-color: orange;
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 166, 0, 0.699);
+  color: white;
+  border-color: orange;
+  border-radius: 5px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.carousel-button a {
+  color: orange;
+}
+.carousel-button:hover a {
+  color: white;
+}
+
+.carousel-item:hover img {
+  opacity: 0.3;
+}
+
+.carousel-item:hover button {
+  opacity: 1;
 }
