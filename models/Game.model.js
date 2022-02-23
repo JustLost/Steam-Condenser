@@ -3,7 +3,10 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const gameSchema = new Schema(
   {
-    steam_appid: Number,
+    steam_appid: {
+      type:Number,
+      unique: true,
+    },
     name: String,
     genres: [],
     about_the_game: String,
