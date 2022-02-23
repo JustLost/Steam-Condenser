@@ -126,6 +126,6 @@ router.get("/profile/:id/recommended", (req, res, next) => {
     //console.log(gamesList)
     res.render("recommended-games", {games: gamesList, user})
   })
-}); 
+});
 
 module.exports = router;
