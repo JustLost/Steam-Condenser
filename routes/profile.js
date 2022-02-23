@@ -119,7 +119,7 @@ router.get("/profile/:id/recommended", (req, res, next) => {
   User.findById(id)
   .then((foundUser) => {
   //  console.log(foundUser.gameTags)
-   return Game.find({genres: {$elemMatch: {description: { $in: foundUser.gameTags }}}}).limit(10)
+   return Game.find({genres: {$elemMatch: {description: { $in: foundUser.gameTags }}}}).sort({"metacritic_score":1}).limit(10)
     
   })
   .then((gamesList) => {
