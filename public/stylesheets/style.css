@@ -214,3 +214,24 @@ nav button{
   width: 170px;
   padding: 2px 10px;
 }
+
+.favorite-games-section {
+  margin-top: 30px;
+  border: green 1px solid;
+  border-radius: 8px;
+  padding: 10px;
+}
+.favorite-games-section h2 {
+  margin: 20px 0;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.games-card {
+  text-align: center;
+}
