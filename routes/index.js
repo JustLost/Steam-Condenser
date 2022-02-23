@@ -58,9 +58,10 @@ router.get("/get/:id", async (request, response) => {
 //Game page
 router.get("/game", async (request, response) => {
   try {
+    const user = request.session.user;
     console.log(request.query.name)
     let result = await collection.findOne({ name: request.query.name });
-    response.render("game", { result });
+    response.render("game", { result, user });
     console.log(result)
   } catch (e) {
     response.status(500).send({ message: e.message });
