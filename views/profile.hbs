@@ -11,6 +11,21 @@
 
   <button type="submit"><a href="/profile/edit">Add your game tags</a></button>
 
+<div class="favorite-games-section">
+  <h2>Favorite Games List</h2>
+
+  <div class="flex-row">
+    {{#each user.favGames}}
+    <div class="games-card">
+      <img src="{{header_image}}" alt="{{name}}">
+      <h3>{{name}}</h3>
+      <a href="/game?name={{name}}">See details</a>
+    </div>
+    {{/each}}
+  </div>
+
+</div>
+
   <form action='/profile/{{user._id}}/delete' method='post'>
     <button>Delete</button>
   </form>

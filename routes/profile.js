@@ -16,7 +16,14 @@ const { route } = require(".");
 
 router.get("/profile", (req, res, next) => {
   const user = req.session.user;
-  res.render("profile", { user });
+
+  User.findById(user._id)
+  .populate('favGames')
+  .then((user) => {
+    console.log(user)
+    res.render("profile", { user });
+  })
+
 });
 
 router.get("/create-profile", async (req, res, next) => {
@@ -126,6 +133,25 @@ router.get("/profile/:id/recommended", (req, res, next) => {
     //console.log(gamesList)
     res.render("recommended-games", {games: gamesList, user})
   })
+});
+
+router.post("/profile/fav/:id", (req, res, next) => {
+    const user = req.session.user;
+    const { id } = req.params;
+    
+    console.log(user)
+    console.log(id)
+
+    User.findByIdAndUpdate(
+      user._id,
+      { $push: { favGames: id } },
+      { new: true }
+    )
+    .then((updatedUser) => {
+      console.log(updatedUser)
+      res.redirect('/profile')
+    })
+    .catch((err) => console.log(err))
 });
 
 module.exports = router;
