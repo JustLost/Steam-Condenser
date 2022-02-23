@@ -34,13 +34,10 @@
             <li>
               <form action="/game" method="get" class="search-bar">
                 <input
-                  name="name"
-                  id="game-search"
-                  type="text"
-                  placeholder="Search game"
+                  name="name" id="game-search" type="text" placeholder="Search game"
                 />
                 <ul id="games"></ul>
-                <button type="submit">Search</button>
+                <button class="search-button"type="submit">Search</button>
               </form>
             </li>
           </ul>
@@ -53,7 +50,7 @@
             </li> }}
             <li>
               <form action="/auth/logout" method="post">
-                <button>Logout</button></form>
+                <button class="logout-button">Logout</button></form>
             </li>
           {{else}}
             <li>
