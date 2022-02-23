@@ -25,45 +25,6 @@
 
   <body>
 
-    {{! <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-      </li>
-    
-    <script>
-        $(document).ready(function () { $("#game-search").autocomplete({ source:
-        async function(request, response) { let data = await
-        fetch(`http://localhost:3000/search?query=${request.term}`)
-        .then(results => results.json()) .then(results => results.map(result =>
-        { return { label: result.name, value: result.name, id: result._id };
-        })); response(data); }, minLength: 2, select: function(event, ui) {
-        fetch(`http://localhost:3000/get/${ui.item.id}`) .then(result =>
-        result.json()) .then(result => { $("#games").empty();
-        result.games.forEach(game => { $("#games").append(`<li>${game}</li>`);
-        }); }); } }); });
-      </script>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          More
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/profile">profile</a>
-          <form action ="/auth/logout" method="post" class="dropdown-item"><button class="dropdown-item">Logout</button></form>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/auth/signup">Sign up</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav> }}
-
     <nav class="flex-row-class">
       <ul class="flex-row-class flex-ul">
         {{#if user}}
@@ -103,26 +64,17 @@
             </li>
         {{/if}}
       </ul>
-      <script>
-        $(document).ready(function () { $("#game-search").autocomplete({ source:
-        async function(request, response) { let data = await
-        fetch(`http://localhost:3000/search?query=${request.term}`)
-        .then(results => results.json()) .then(results => results.map(result =>
-        { return { label: result.name, value: result.name, id: result._id };
-        })); response(data); }, minLength: 2, select: function(event, ui) {
-        fetch(`http://localhost:3000/get/${ui.item.id}`) .then(result =>
-        result.json()) .then(result => { $("#games").empty();
-        result.games.forEach(game => { $("#games").append(`<li>${game}</li>`);
-        }); }); } }); });
-      </script>
+      
     </nav>
 
     {{{body}}}
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/js/script.js"></script>
+    
   </body>
 
 </html>
