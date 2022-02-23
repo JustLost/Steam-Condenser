@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
 body {
   padding: 50px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
@@ -13,6 +16,8 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid green 1px;
+  height: 40px;
+  margin-top: -15px;
 }
 
 .flex-ul {
@@ -49,20 +54,23 @@ nav button{
   color: red;
 }
 
-.carousel-inner > .item > img {
-  width:640px;
-  height:360px;
+.carousel-inner img {
+  border-radius: 20px;
 }
 .carousel {
-  width:640px;
-  height:360px;
+  width:60vw;
+  height:auto;
+  margin-top: 100px;
+  border-radius: 30px;
+  box-shadow: 10px 10px 50px rgba(104, 101, 101, 0.308);
 }
+
 
 .carousel-button {
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.205);
+  background-color: black;
   color: white;
-  border-color: green;
+  border-color: black;
 }
 .middle {
   transition: .5s ease;
@@ -76,17 +84,19 @@ nav button{
 }
 
 .carousel-button:hover {
-  background-color: rgba(0, 128, 0, 0.452);
-  color: white;
-  border-color: green;
+  background-color: white;
+  color: black;
+  border: none;
   border-radius: 5px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
 .carousel-button a {
-  color: green;
+  color: white;
+  text-decoration: none;
 }
 .carousel-button:hover a {
-  color: white;
+  color: black;
+  font-weight: 550;
 }
 
 .carousel-item:hover img {
@@ -95,17 +105,22 @@ nav button{
 
 .carousel-item:hover button {
   opacity: 1;
+  align-items: center;
+  width: 250px;
+  height: 50px;
 }
 
 .search-button {
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.205);
+  background: transparent;
   color: green;
   border-color: green;
 }
 
 .search-button:hover {
   background-color: green;
+  text-align: center;
+  align-items: center;
   color: black;
   border-color: green;
   border-radius: 5px;
@@ -126,18 +141,6 @@ nav button{
   border-radius: 5px;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
-/* .form-tags label{
-  border: green 2px solid;
-  border-radius: 20px;
-  width: 170px;
-  padding: 5px 10px;
-}
-
-.form-tags input[type="checkbox"i]{
-  
-  
-} */
 
 .tag {
   display: block;
@@ -234,4 +237,63 @@ nav button{
 }
 .games-card {
   text-align: center;
+}
+
+#game-search {
+  width: 500px;
+  background: transparent;
+  border: green 1px solid;
+  
+}
+
+input::placeholder {
+  
+  padding-left: 10px;
+}
+
+.index-container {
+  font-family: 'Anton', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index-container h1 {
+  margin: 30px auto 40px;
+}
+
+.index-container h3{
+  margin: 30px auto 40px;
+}
+
+input {
+  color: white;
+  padding-left: 10px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  text-align: justify;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+#game-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.game-container p {
+  margin-top: 30px;
+}
+
+.game-container h1 {
+  font-family: 'Anton', sans-serif;
 }
