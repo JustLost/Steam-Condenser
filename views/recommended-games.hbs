@@ -1,10 +1,10 @@
-<h1>Recommended Games List</h1>
+<h1>Recommended Games</h1>
 
 {{#each games}}
 <img src="{{header_image}}" alt="{{name}}" style="margin: 10px">
 <a href="/game?name={{name}}">{{name}}</a>
 
 <form action="/profile/fav/{{_id}}" method="post">
-<button type="submit">Add to wish list</button>
+<button type="submit" id="fav-button" ></button>
 </form>
 {{/each}}

@@ -19,7 +19,7 @@
     <div class="games-card">
       <img src="{{header_image}}" alt="{{name}}">
       <h3>{{name}}</h3>
-      <a href="/game?name={{name}}">See details</a>
+      <a href="/game?name={{name}}">Game details</a>
 
       <form action="/profile/{{user._id}}/remove" method="post">
       <button type="submit">Remove of My Favorite Games</button>
@@ -31,6 +31,6 @@
 </div>
 
   <form action='/profile/{{user._id}}/delete' method='post'>
-    <button>Delete My Account</button>
+    <button>Delete Account</button>
   </form>
 </div>

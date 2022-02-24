@@ -55,13 +55,13 @@ nav button{
 }
 
 .carousel-inner img {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .carousel {
   width:60vw;
   height:auto;
   margin-top: 100px;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 10px 10px 50px rgba(104, 101, 101, 0.308);
 }
 
@@ -345,5 +345,12 @@ input {
   background: rgb(255, 255, 255);
   border: green 1px solid;
   color: green;
+  
+}
+
+#fav-button {
+  background-image: url("/images/green-heart.png");
+  width: 35px;
+  height: 35px;
   
 }
