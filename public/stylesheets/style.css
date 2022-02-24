@@ -354,3 +354,8 @@ input {
   height: 35px;
   
 }
+
+#web-name {
+  display: flex;
+  justify-content: center;
+}

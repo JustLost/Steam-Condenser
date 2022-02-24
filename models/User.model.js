@@ -24,8 +24,8 @@ const userSchema = new Schema(
     imageUrl: {
       type: String,
       default:
-        "https://st.depositphotos.com/2101611/3925/v/450/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg",
-    },
+        "../images/user.png",
+    }, 
     gamesList: {
       type: Array,
     },
