@@ -23,7 +23,14 @@ router.get("/create-profile", async (req, res, next) => {
 //Edit profile
 router.get("/profile/edit", (req, res, next) => {
   const user = req.session.user;
-  res.render("profile-edit", { user });
+  User.findById(user._id)
+  .then((user) => {
+    // console.log(user)
+    res.render("profile-edit", { user });
+  })
+  .catch((err) => {
+    next(err)
+  })
 
 });
 

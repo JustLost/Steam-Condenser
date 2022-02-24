@@ -52,7 +52,7 @@ module.exports = app;
 
 app.use(function (req, res, next) {
   console.log(app.locals);
-  app.locals.user = req.session.user;
+  app.locals.currentUser = req.session.user;
   next();
 });
 
