@@ -1,18 +1,21 @@
+
 <h1>Profile Page</h1>
 
-<div>
+<div class="image-cropper">
   <img
+    class="rounded-img"
     src="{{user.imageUrl}}"
     alt="{{user.username}}"
-    style="width: 150px; max-height: 280px"
+    style="width: 300px; max-height: 300px"
   />
-
+</div>
+<div>
   <h2>{{user.username}}</h2>
 
   <button type="submit"><a href="/profile/edit">Add Game Tags</a></button>
 
   <div class="favorite-games-section">
-    <h2>My Favorite Games</h2>
+    <h2>My Favorite Games:</h2>
 
     <div class="flex-row">
       

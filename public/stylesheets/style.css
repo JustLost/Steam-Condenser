@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 body {
   padding: 50px;
@@ -9,6 +8,14 @@ body {
   color: white;
 }
 
+.image-cropper {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  
+}
 .flex-row-class {
   display: flex;
   flex-direction: row;
@@ -25,13 +32,13 @@ body {
   gap: 1rem;
 }
 
-.search-bar{
+.search-bar {
   display: flex;
   flex-direction: row;
   width: 35vw;
 }
 
-input{
+input {
   background-color: rgba(255, 255, 255, 0.329);
   border-radius: 5px;
 }
@@ -50,7 +57,7 @@ ul {
   list-style-type: none;
 }
 
-nav button{
+nav button {
   color: red;
 }
 
@@ -58,23 +65,21 @@ nav button{
   border-radius: 10px;
 }
 .carousel {
-  width:60vw;
-  height:auto;
+  width: 60vw;
+  height: auto;
   margin-top: 100px;
   border-radius: 10px;
   box-shadow: 10px 10px 50px rgba(104, 101, 101, 0.308);
 }
-
 
 .carousel-button {
   background-color: white;
   color: black;
   border: none;
   border-radius: 5px;
-  
 }
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -125,7 +130,8 @@ nav button{
   color: black;
   border-color: green;
   border-radius: 5px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logout-button {
@@ -134,6 +140,17 @@ nav button{
   color: black;
   border-color: green;
   max-height: 50px;
+  width: 100px;
+}
+.save-button {
+  border-radius: 5px;
+  background-color: green;
+  color: black;
+  border-color: green;
+  max-height: 40px;
+  width: 100px;
+  margin-left: -5vw;
+  margin-top: 270px;
 }
 
 .logout-button:hover {
@@ -141,14 +158,15 @@ nav button{
   color: green;
   border-color: green;
   border-radius: 5px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tag {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 50px;
+  margin-bottom: 25px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -157,13 +175,19 @@ nav button{
   user-select: none;
 }
 
+.choose-tag {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.choose-tag:hover {
+  color: green;
+}
 /* Hide the browser's default checkbox */
 .tag input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
 }
 
 /* Create a custom checkbox */
@@ -221,9 +245,7 @@ nav button{
 }
 
 .favorite-games-section {
-  margin-top: 30px;
-  border: green 1px solid;
-  border-radius: 8px;
+  margin-top: 30px;  
   padding: 10px;
 }
 .favorite-games-section h2 {
@@ -243,18 +265,17 @@ nav button{
 }
 
 #game-search {
-  width: 500px;
+  width: 480px;
   background: transparent;
   border: green 1px solid;
-  
 }
 
-input::placeholder {  
+input::placeholder {
   padding-left: 10px;
 }
 
 .index-container {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,7 +286,7 @@ input::placeholder {
   margin: 30px auto 40px;
 }
 
-.index-container h3{
+.index-container h3 {
   margin: 30px auto 40px;
 }
 
@@ -282,7 +303,6 @@ input {
   text-align: justify;
   justify-content: center;
   align-content: center;
-  
 }
 
 #game-container {
@@ -297,29 +317,37 @@ input {
 }
 
 .game-container h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
 }
 
-.edit-container {  
+.edit-container {
   display: flex;
   flex-direction: row;
-  
 }
 .form-container {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  
+}
+
+.tag-two {
+  padding-left: 100px;
 }
 
 .form-group {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+}
+
+.profile-label {
+  padding-left: 15px;
 }
 
 .form-tags {
   display: flex;
-  
+  margin: 40px;
+  margin-left: 80px;
 }
 
 #tags {
@@ -335,41 +363,31 @@ input {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 5px;
-  
 }
 
 .game-link:hover {
   color: black;
   background-color: green;
 }
- 
+
 #profile-input {
-  width: 500px;
+  width: 250px;
   background: rgba(255, 255, 255, 0.274);
   border: green 1px solid;
   color: white;
-}
-
-#profile-input::-webkit-file-upload-button {
-  visibility: hidden;
-}
-
-#profile-input::before {
-  
+  margin: 10px;
 }
 
 #profile-input:hover {
   background: rgb(255, 255, 255);
   border: green 1px solid;
   color: green;
-  
 }
 
 #fav-button {
   background-image: url("/images/green-heart.png");
   width: 35px;
   height: 35px;
-  
 }
 
 #web-name {
@@ -380,28 +398,46 @@ input {
 }
 
 .games-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 480px;
-    height: 425px;
-    
-    border-color: green;
-    border-radius: 10px;    
-    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.904);
+  display: flex;
 
-    justify-content: center;
-    align-items: center;
-    background-color: none;
-    color: white;
-    
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;    
+  flex-wrap: wrap;
+  width: 480px;
+  height: 425px;
+
+  border-color: green;
+  border-radius: 10px;
+
+  color: white;
+
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .games-container a {
   text-decoration: none;
   color: white;
+}
+
+.border-right {
+  border-right: green 1px solid;
+  padding: 30px;
+  min-height: 60vh;
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+.tag-container {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.footer {
+  padding-top: 25vh;
+  font-size: 10px;
+}
+.footer h1 {
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
 }
