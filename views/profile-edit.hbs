@@ -2,35 +2,32 @@
 <div class="row">
   <div class="col-md-6">
 
-    <form
-      action="/profile/edit"
+    <form action="/profile/edit"
       method="post"
-      enctype="multipart/form-data"
-    >
-      <div class="form-group">
+      enctype="multipart/form-data">
 
+      <div class="edit-container">
+
+      <div class="form-container">
+      <div class="form-group">        
         <label for="email">Email</label>
-        <input type="email" class="form-control" name="email" value="{{user.email}}" required="true"
-        />
+        <input id="profile-input" type="email" class="form-control" name="email" value="{{user.email}}" required="true"/>
       </div>
 
       <div class="form-group">
 
         <label for="name">Username</label>
-        <input name="username" class="form-control" value="{{user.username}}" required="true" />
+        <input id="profile-input" name="username" class="form-control" value="{{user.username}}" required="true" />
       </div>
 
       <div class="form-group">
-
         <label for="image">Image</label>
         <input type="file" name="image" class="form-control" />
-
-        <input type="file" name="existingImage" class="form-control" value="{{imageUrl}}" hidden />
-
+        <input id="profile-input" type="file" name="existingImage" class="form-control" value="{{imageUrl}}" hidden />
+      </div>
       </div>
 
       <div class="form-group">
-
         <label for="name">Choose your favorite game tags</label>
         <div class="form-tags">
         <div>
@@ -42,85 +39,113 @@
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="RPG" name="gameTags" value="RPG" />
-          <label>RPG</label>
+          <span class="checkmark"></span>
+          <span class="label">RPG</span>
         </div>
 
         <div>
-          <input
-            type="checkbox"  id="adventure" name="gameTags" value="Adventure"
-          />
-          <label>Adventure</label>
+          <label class="tag">
+          <input type="checkbox"  id="adventure" name="gameTags" value="Adventure" />
+          <span class="checkmark"></span>
+          <span class="label">Adventure</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="action" name="gameTags" value="Action" />
-          <label>Action</label>
+          <span class="checkmark"></span>
+          <span class="label">Action</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="racing" name="gameTags" value="Racing" />
-          <label>Racing</label>
+          <span class="checkmark"></span>
+          <span class="label">Racing</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="sports" name="gameTags" value="Sports" />
-          <label>Sports</label>
+          <span class="checkmark"></span>
+          <span class="label">Sports</span>
+          </label>
         </div>
 
         <div>
-          <input
-            type="checkbox" id="platformer" name="gameTags" value="Platformer"
-          />
-          <label>Platformer</label>
+          <label class="tag">
+          <input type="checkbox" id="platformer" name="gameTags" value="Platformer"/>
+          <span class="checkmark"></span>
+          <span class="label">Platformer</span>
+          </label>
         </div>
 
         <div>
-          <input
-            type="checkbox" id="strategy" name="gameTags" value="Strategy"
-          />
-          <label>Strategy</label>
+          <label class="tag">
+          <input type="checkbox" id="strategy" name="gameTags" value="Strategy"/>
+          <span class="checkmark"></span>
+          <span class="label">Strategy</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="arcade" name="gameTags" value="Arcade" />
-          <label>Arcade</label>
+          <span class="checkmark"></span>
+          <span class="label">Arcade</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="shooter" name="gameTags" value="Shooter" />
-          <label>Shooter</label>
+          <span class="checkmark"></span>
+          <span class="label">Shooter</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="indie" name="gameTags" value="Indie" />
-          <label>Indie</label>
+          <span class="checkmark"></span>
+          <span class="label">Indie</span>
+          </label>
         </div>
 
         <div>
+          <label class="tag">
           <input type="checkbox" id="co-op" name="gameTags" value="Co-op" />
-          <label>Co-op</label>
+          <span class="checkmark"></span>
+          <span class="label">Co-op</span>
+          </label>
         </div>
 
         <div>
-          <input
-            type="checkbox" id="multiplayer" name="gameTags" value="Multiplayer"
-          />
-          <label>Multiplayer</label>
+          <label class="tag">
+          <input type="checkbox" id="multiplayer" name="gameTags" value="Multiplayer"/>
+          <span class="checkmark"></span>
+          <span class="label">Multiplayer</span>
+          </label>
         </div>
 
         <div>
-          <input
-            type="checkbox" id="singleplayer" name="gameTags" value="Singleplayer"
-          />
-          <label>Singleplayer</label>
+          <label class="tag">
+          <input type="checkbox" id="singleplayer" name="gameTags" value="Singleplayer"/>
+          <span class="checkmark"></span>
+          <span class="label">Singleplayer</span>
+          </label>
         </div>
       </div>
       </div>   
-
-
-      <button type="submit">Save</button>
+</div>
+    <button class="logout-button" type="submit">Save</button>
     </form>
 
+      
   </div>
 </div>

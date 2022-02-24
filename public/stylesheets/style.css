@@ -67,10 +67,11 @@ nav button{
 
 
 .carousel-button {
+  background-color: white;
+  color: black;
+  border: none;
   border-radius: 5px;
-  background-color: black;
-  color: white;
-  border-color: black;
+  
 }
 .middle {
   transition: .5s ease;
@@ -84,18 +85,18 @@ nav button{
 }
 
 .carousel-button:hover {
-  background-color: white;
-  color: black;
-  border: none;
   border-radius: 5px;
+  background-color: black;
+  color: white;
+  border-color: black;
   /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
 .carousel-button a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 .carousel-button:hover a {
-  color: black;
+  color: white;
   font-weight: 550;
 }
 
@@ -132,6 +133,7 @@ nav button{
   background-color: green;
   color: black;
   border-color: green;
+  max-height: 50px;
 }
 
 .logout-button:hover {
@@ -200,8 +202,8 @@ nav button{
 
 /* Style the checkmark/indicator */
 .tag .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 14px;
+  top: 9px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -246,8 +248,7 @@ nav button{
   
 }
 
-input::placeholder {
-  
+input::placeholder {  
   padding-left: 10px;
 }
 
@@ -296,4 +297,53 @@ input {
 
 .game-container h1 {
   font-family: 'Anton', sans-serif;
+}
+
+.edit-container {  
+  display: flex;
+  flex-direction: row;
+  
+}
+.form-container {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-group {
+  flex-wrap: wrap;
+  display: flex;
+  
+}
+
+.game-link {
+  border: green 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+  color: green;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  
+}
+
+.game-link:hover {
+  color: black;
+  background-color: green;
+}
+ 
+#profile-input {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.274);
+  border: green 1px solid;
+  color: white;
+  
+}
+
+#profile-input:hover {
+  background: rgb(255, 255, 255);
+  border: green 1px solid;
+  color: green;
+  
 }
