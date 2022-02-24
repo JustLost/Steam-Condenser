@@ -14,17 +14,6 @@ const User = require("../models/User.model");
 const { array } = require("../config/cloudinary.config");
 const { route } = require(".");
 
-router.get("/profile", (req, res, next) => {
-  const user = req.session.user;
-
-  User.findById(user._id)
-  .populate('favGames')
-  .then((user) => {
-    // console.log(user)
-    res.render("profile", { user });
-  })
-
-});
 
 router.get("/create-profile", async (req, res, next) => {
   const user = req.session.user;
@@ -36,12 +25,6 @@ router.get("/profile/edit", (req, res, next) => {
   const user = req.session.user;
   res.render("profile-edit", { user });
 
-
-  /* User.findById(req.params.id)
-    .then((profile) => {
-      res.render("profile-edit", profile);
-    })
-    .catch((err) => next(err));  */
 });
 
 
@@ -136,41 +119,52 @@ router.get("/profile/:id/recommended", (req, res, next) => {
   })
 });
 
-/* router.post("/profile/fav/:id", (req, res, next) => {
-    const user = req.session.user;
-    const { id } = req.params;
-    
-    User.findByIdAndUpdate(
-      user._id,
-      { $push: { favGames: id } },
-      { new: true }
-    )
-    .then((updatedUser) => {
-      // console.log(updatedUser)
-      res.redirect('/profile')
-    })
-    .catch((err) => next(err))
+router.get("/profile", (req, res, next) => {
+  const user = req.session.user;
+
+  User.findById(user._id)
+  .populate('favGames')
+  .then((user) => {
+    // console.log(user)
+    res.render("profile", { user });
+  })
+
 });
 
-router.get("/profile/:id/remove",(req, res, next) => {
-  
-  res.render('delete-fav-game')
-});
-
-router.post('/profile/:id/remove"', (req, res, next) => {
+router.post("/profile/fav/:id", (req, res, next) => {
+  const user = req.session.user;
   const { id } = req.params;
-  
 
-  User.findById(id)
-    .then((resolve) => {
-      console.log(resolve)
-      // req.session.destroy();
-      // res.redirect(`/profile`);
-    })
-    .catch((err) => {
-      next(err);
-    });
-}); */
+  console.log(user)
+  console.log(id)
 
+  User.findByIdAndUpdate(
+    user._id,
+    { $push: { favGames: id } },
+    { new: true }
+  )
+  .then((updatedUser) => {
+    console.log(updatedUser)
+    res.redirect('/profile')
+  })
+  .catch((err) => console.log(err))
+});
+
+
+router.post('/profile/fav/:id/remove', (req, res, next) => {
+  const user = req.session.user;
+  const { id } = req.params;
+
+  User.findByIdAndUpdate(
+    user._id,
+    { $pull: { favGames: id } },
+    { new: true }
+  )
+  .then((updatedUser) => {
+    console.log(updatedUser)
+    res.redirect('/profile')
+  })
+  .catch((err) => console.log(err))
+});
 
 module.exports = router;
