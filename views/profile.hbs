@@ -1,4 +1,4 @@
-<h1>User profile</h1>
+<h1>Profile Page</h1>
 
 <div>
   <img
@@ -9,10 +9,10 @@
 
   <h2>{{user.username}}</h2>
 
-  <button type="submit"><a href="/profile/edit">Add your game tags</a></button>
+  <button type="submit"><a href="/profile/edit">Add Game Tags</a></button>
 
 <div class="favorite-games-section">
-  <h2>Favorite Games List</h2>
+  <h2>My Favorite Games</h2>
 
   <div class="flex-row">
     {{#each user.favGames}}
@@ -20,13 +20,17 @@
       <img src="{{header_image}}" alt="{{name}}">
       <h3>{{name}}</h3>
       <a href="/game?name={{name}}">See details</a>
-    </div>
+
+      <form action="/profile/{{user._id}}/remove" method="post">
+      <button type="submit">Remove of My Favorite Games</button>
+      </form>
+    </div>  
     {{/each}}
   </div>
 
 </div>
 
   <form action='/profile/{{user._id}}/delete' method='post'>
-    <button>Delete</button>
+    <button>Delete My Account</button>
   </form>
 </div>

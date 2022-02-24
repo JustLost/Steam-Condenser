@@ -59,10 +59,10 @@ router.get("/get/:id", async (request, response) => {
 router.get("/game", async (request, response) => {
   try {
     const user = request.session.user;
-    console.log(request.query.name)
+    // console.log(request.query.name)
     let result = await collection.findOne({ name: request.query.name });
     response.render("game", { result, user });
-    console.log(result)
+    // console.log(result)
   } catch (e) {
     response.status(500).send({ message: e.message });
   }
@@ -84,7 +84,7 @@ router.get("/", async (request, response) => {
   try {
     const user = request.session.user;
     const result = await Game.find().sort({ metacritic_score: 1 }).limit(10);
-    console.log(result)
+    // console.log(result)
     response.render("index", { result, user });
   } catch (e) {
     response.status(500).send({ message: e.message });

@@ -20,7 +20,7 @@ router.get("/profile", (req, res, next) => {
   User.findById(user._id)
   .populate('favGames')
   .then((user) => {
-    console.log(user)
+    // console.log(user)
     res.render("profile", { user });
   })
 
@@ -69,7 +69,9 @@ router.post(
         req.session.user = user;
         res.redirect(`/profile/${user._id}/recommended`);
       })
-      .catch((err) => next(err));
+      .catch((err) => {
+        next(err);
+      });
   }
 );
 
@@ -100,7 +102,6 @@ router.post(
 
 //Creating "delete user" page
 router.get("/profile/:id/delete",(req, res, next) => {
-  // const {id} = req.params
   
   res.render('delete-profile')
 });
@@ -135,23 +136,41 @@ router.get("/profile/:id/recommended", (req, res, next) => {
   })
 });
 
-router.post("/profile/fav/:id", (req, res, next) => {
+/* router.post("/profile/fav/:id", (req, res, next) => {
     const user = req.session.user;
     const { id } = req.params;
     
-    console.log(user)
-    console.log(id)
-
     User.findByIdAndUpdate(
       user._id,
       { $push: { favGames: id } },
       { new: true }
     )
     .then((updatedUser) => {
-      console.log(updatedUser)
+      // console.log(updatedUser)
       res.redirect('/profile')
     })
-    .catch((err) => console.log(err))
+    .catch((err) => next(err))
 });
+
+router.get("/profile/:id/remove",(req, res, next) => {
+  
+  res.render('delete-fav-game')
+});
+
+router.post('/profile/:id/remove"', (req, res, next) => {
+  const { id } = req.params;
+  
+
+  User.findById(id)
+    .then((resolve) => {
+      console.log(resolve)
+      // req.session.destroy();
+      // res.redirect(`/profile`);
+    })
+    .catch((err) => {
+      next(err);
+    });
+}); */
+
 
 module.exports = router;
