@@ -239,6 +239,7 @@ nav button{
 }
 .games-card {
   text-align: center;
+  border: 1px solid green;
 }
 
 #game-search {
@@ -312,9 +313,18 @@ input {
 }
 
 .form-group {
+  display: flex;
   flex-wrap: wrap;
+}
+
+.form-tags {
   display: flex;
   
+}
+
+#tags {
+  display: flex;
+  flex-direction: column;
 }
 
 .game-link {
@@ -334,10 +344,17 @@ input {
 }
  
 #profile-input {
-  width: 250px;
+  width: 500px;
   background: rgba(255, 255, 255, 0.274);
   border: green 1px solid;
   color: white;
+}
+
+#profile-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#profile-input::before {
   
 }
 
@@ -358,4 +375,33 @@ input {
 #web-name {
   display: flex;
   justify-content: center;
+  background-color: none;
+  border: none;
+}
+
+.games-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 480px;
+    height: 425px;
+    
+    border-color: green;
+    border-radius: 10px;    
+    box-shadow: 2px 2px 15px 0 rgba(0, 0, 0, 0.904);
+
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    color: white;
+    
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;    
+}
+
+.games-container a {
+  text-decoration: none;
+  color: white;
 }

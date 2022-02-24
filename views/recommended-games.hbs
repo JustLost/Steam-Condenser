@@ -1,5 +1,6 @@
 <h1>Recommended Games</h1>
 
+<div class="games-container">
 {{#each games}}
 <img src="{{header_image}}" alt="{{name}}" style="margin: 10px">
 <a href="/game?name={{name}}">{{name}}</a>
@@ -8,3 +9,4 @@
 <button type="submit" id="fav-button" ></button>
 </form>
 {{/each}}
+</div>
