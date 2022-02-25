@@ -28,7 +28,15 @@ $(document).ready(function () {
     },
     minLength: 2,
     select: function (event, ui) {
-      fetch(`http://localhost:3000/get/${ui.item.id}`)
+      fetch(`http://localhost:3000/get/${ui.item.id}`, {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Headers":
+            "Content-Type, Content-Range, Content-Disposition, Content-Description, x-requested-with, x-requested-by",
+          accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
         .then((result) => result.json())
         .then((result) => {
           $("#games").empty();
