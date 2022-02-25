@@ -41,6 +41,8 @@ app.use("/", profileRoute);
 const Cors = require("cors");
 const BodyParser = require("body-parser");
 
+
+
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 app.use(Cors());

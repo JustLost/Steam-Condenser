@@ -11,8 +11,9 @@ const isLoggedIn =require("./../middleware/isLoggedIn")
 // MongoAtlas for autocomplete search
 const { MongoClient, ObjectId } = require("mongodb");
 const MONGO_URI = require("../utils/consts");
-const client = new MongoClient(process.env["MONGODB_URI"]);
+const client = new MongoClient(MONGO_URI);
 let collection;
+
 
 const Game = require("../models/Game.model");
 
