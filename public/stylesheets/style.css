@@ -14,7 +14,6 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  
 }
 .flex-row-class {
   display: flex;
@@ -149,7 +148,7 @@ nav button {
   border-color: green;
   max-height: 40px;
   width: 100px;
-  margin-left: -5vw;
+
   margin-top: 270px;
 }
 
@@ -245,7 +244,8 @@ nav button {
 }
 
 .favorite-games-section {
-  margin-top: 30px;  
+  margin-top: 45px;
+  margin-left: 40px;
   padding: 10px;
 }
 .favorite-games-section h2 {
@@ -255,13 +255,15 @@ nav button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+
+  gap: 5vw;
 }
 .games-card {
   text-align: center;
   border: 1px solid green;
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.062);
 }
 
 #game-search {
@@ -425,6 +427,7 @@ input {
   padding: 30px;
   min-height: 60vh;
   background-color: rgba(255, 255, 255, 0.055);
+  width: 400px;
 }
 
 .tag-container {
@@ -437,7 +440,113 @@ input {
   font-size: 10px;
 }
 .footer h1 {
+  border-top: green 2px solid;
   font-size: 22px;
   font-weight: 300;
   text-align: center;
+  color: gray;
+}
+
+.profile-section {
+  padding-top: 50px;
+  display: flex;
+}
+
+.profile-user {
+  border-right: green 1px solid;
+  padding: 50px;
+  padding-top: 70px;
+  min-height: 60vh;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+.profile-user h2 {
+  padding-top: 15px;
+}
+
+.profile-button {
+  border-radius: 5px;
+  background: transparent;
+  color: green;
+  border-color: green;
+  margin-top: 20px;
+}
+.profile-button a {
+  text-decoration: none;
+  color: green;
+}
+
+.profile-button:hover a {
+  color: black;
+  font-weight: 400;
+}
+.profile-button:hover {
+  background-color: green;
+  text-align: center;
+  align-items: center;
+  border-color: green;
+  border-radius: 5px;
+  color: black;
+}
+
+.profile-buttons {
+}
+
+.row {
+  padding-top: 50px;
+}
+
+.signup-container{
+  display: flex;
+  justify-content: center;
+  width: 30vw;
+  background-color: rgba(255, 255, 255, 0.185);
+  border-right: green 2px solid;
+  min-height: 300px;
+  padding: 40px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-top: -85px;
+}
+.main-signUp {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.h2-signup{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.submit-button{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  border-color: white;
+  margin-top: 20px;
+  font-weight: 100;
+}
+.submit-button:hover{
+  border-radius: 5px;
+  background: transparent;
+  color: green;
+  border-color: green;
+  margin-top: 20px;
+  font-weight: 100;
 }

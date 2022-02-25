@@ -1,24 +1,36 @@
-<form action="/auth/signup" method="POST" enctype="multipart/form-data">
-  <label>
-    E-mail:
-    <input type="email" name="email" />
-  </label>
-  <label>
-    Username:
-    <input type="text" name="username" />
-  </label>
-  <label>
-    Password:
-    <input type="password" name="password" />
-  </label>
+<h2 class="h2-signup">Sign Up</h2>
 
-  <hr/>
+<div class="main-signUp">  
+<div class="signup-container">
 
-  <label for="imageUrl">Profile picture:</label>
-  <input type="file" name="image" class="form-control" />
-  <button type="submit">Submit</button>
-</form>
+  <form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
-{{#if errorMessage}}
-  {{errorMessage}}
-{{/if}}
+    <div class="form-group">        
+      <label class="profile-label" for="email">Email:</label>
+      <input id="profile-input" type="email" class="form-control" name="email" required="true"/>
+    </div>
+    <div class="form-group">
+      <label class="profile-label" for="name">Username:</label>
+      <input id="profile-input" name="username" class="form-control" required="true" />
+    </div>
+
+    <div class="profile-label">
+      <label class="profile-label" for="password">Password:</label>
+      <input id="profile-input" type="password" name="password" class="form-control" required="true"/>
+    </div>
+
+    <div class="form-group">
+      <label class="profile-label" for="image">Profile image:</label>
+      <input id="profile-input" type="file" name="image" class="form-control"/>
+      <button class="submit-button" type="submit">Submit</button>
+    </div>
+    
+    
+
+  </form>
+
+  {{#if errorMessage}}
+    {{errorMessage}}
+  {{/if}}
+</div>
+</div>

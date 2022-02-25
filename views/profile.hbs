@@ -1,24 +1,54 @@
+<div class="profile-section">
 
-<h1>Profile Page</h1>
+  <div class="profile-user">
+    <h1>Profile Page</h1>
 
-<div class="image-cropper">
-  <img
-    class="rounded-img"
-    src="{{user.imageUrl}}"
-    alt="{{user.username}}"
-    style="width: 300px; max-height: 300px"
-  />
-</div>
-<div>
-  <h2>{{user.username}}</h2>
+    <div class="image-cropper user" 
+    style="background-image:url('path/to/user/img.png')">
+      <img
+        class="rounded-img"
+        src="{{user.imageUrl}}"
+        alt="{{user.username}}"
+        style="width: 300px; max-height: 300px"
+      />
+    </div>
 
-  <button type="submit"><a href="/profile/edit">Add Game Tags</a></button>
+    <div class="profile-buttons">
+      <h2>{{user.username}}</h2>
+      <button class="profile-button" type="submit"><a href="/profile/edit">Add Game Tags</a></button>
+      <button class="profile-button" type="button" data-toggle="modal" data-target="#exampleModal">Delete Account</button>
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete your acount</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal">Cancel</button>
+              <form action='/profile/{{user._id}}/delete' method='post'>
+                  <button>Delete Account</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 
   <div class="favorite-games-section">
     <h2>My Favorite Games:</h2>
 
-    <div class="flex-row">
-      
+    <div class="flex-row">      
       {{#each user.favGames}}
         <div class="games-card">
           <img src="{{header_image}}" alt="{{name}}" />
@@ -31,11 +61,3 @@
         </div>
       {{/each}}
     </div>
-  </div>
-
-</div>
-
-  <form action='/profile/{{user._id}}/delete' method='post'>
-    <button>Delete Account</button>
-  </form>
-</div>

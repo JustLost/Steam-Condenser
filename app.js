@@ -57,9 +57,9 @@ app.use(function (req, res, next) {
 });
 
 (async () => {
-  // if (await Game.countDocuments({})) {
-  //   return;
-  // }
+  if (await Game.countDocuments({})) {
+    return;
+  }
 
   // let response = await axios.get(
   //   "https://steamspy.com/api.php?request=top100in2weeks"

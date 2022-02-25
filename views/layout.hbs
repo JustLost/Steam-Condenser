@@ -24,36 +24,36 @@
     <nav class="flex-row-class">
       <ul class="flex-row-class flex-ul">
         {{#if user}}
-            <li>
-              <p><a href="/">Home</a></p>
-            </li>
-            <li>
-              <form action="/game" method="get" class="search-bar">
-                <input name="name" id="game-search" type="text" placeholder="Search game"
-                />
-                <ul id="games"></ul>
-                <button class="search-button"type="submit"> Search</button>
-              </form>
-            </li>
-          </ul>
-          <ul class="flex-row-class flex-ul">
-            <li>
-              <p><a href="/profile">Profile</a></p>
-            </li>
-            {{! <li>
-              <p><a href="/create-profile">Create Profile</a></p>
-            </li> }}
-            <li>
-              <form action="/auth/logout" method="post">
-                <button class="logout-button">Logout</button></form>
-            </li>
-          {{else}}
-            <li>
-              <p><a href="/auth/signup">Sign Up</a></p>
-            </li>
-            <li>
-              <p><a href="/auth/login">Login</a></p>
-            </li>
+          <li>
+            <p><a href="/">Home</a></p>
+          </li>
+          <li>
+            <form action="/game" method="get" class="search-bar">
+              <input name="name" id="game-search" type="text" placeholder="Search game"
+              />
+              <ul id="games"></ul>
+              <button class="search-button"type="submit"> Search</button>
+            </form>
+          </li>
+      </ul>
+      <ul class="flex-row-class flex-ul">
+          <li>
+            <p><a href="/profile">Profile</a></p>
+          </li>
+          {{! <li>
+            <p><a href="/create-profile">Create Profile</a></p>
+          </li> }}
+          <li>
+            <form action="/auth/logout" method="post">
+              <button class="logout-button">Logout</button></form>
+          </li>
+        {{else}}
+          <li>
+            <p><a href="/auth/signup">Sign Up</a></p>
+          </li>
+          <li>
+            <p><a href="/auth/login">Login</a></p>
+          </li>
         {{/if}}
       </ul>      
     </nav>
@@ -64,7 +64,7 @@
     
     <div class="footer">
 
-    <footer style="height:auto; background-color:green;">
+    <footer style="height:40px; background-color:rgba(255, 255, 255, 0.096);">
       <h1> Ironhack | ritaCunha && joãoBálico | web-dev 2022</h1>
     </footer>
 </div>
