@@ -12,10 +12,7 @@ $(document).ready(function () {
       let data = await fetch(`http://localhost:3000/search?query=${request.term}`, {
         method: "GET",
         headers: {
-          "Access-Control-Allow-Headers":
-            "Content-Type, Content-Range, Content-Disposition, Content-Description, x-requested-with, x-requested-by",
-          accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
+          'Access-Control-Allow-Origin':'*'
         },
       })
         .then((results) => results.json())
@@ -31,10 +28,7 @@ $(document).ready(function () {
       fetch(`http://localhost:3000/get/${ui.item.id}`, {
         method: "GET",
         headers: {
-          "Access-Control-Allow-Headers":
-            "Content-Type, Content-Range, Content-Disposition, Content-Description, x-requested-with, x-requested-by",
-          accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
+          'Access-Control-Allow-Origin':'*'
         },
       })
         .then((result) => result.json())
