@@ -3,7 +3,7 @@
         <h1>{{result.name}}</h1>
         <p>{{{result.about_the_game}}}</p>
 
-        <a class="game-link" href="{{result.website}}">{{result.website}}</a>
+        <a target="_blank" class="game-link" href="{{result.website}}">{{result.website}}</a>
         <form action="/profile/fav/{{result._id}}" method="post">
             <button type="submit" id="fav-button" ></button>
         </form>
