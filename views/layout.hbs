@@ -24,10 +24,10 @@
 
     <nav class="flex-row-class">
       <ul class="flex-row-class flex-ul">
-        {{#if user}}
-          <li>
-            <img class="mini-logo" src="/images//condenser-small3.png" alt="mini logo">
+        <li>
+            <a href="/"><img class="mini-logo" src="/images//condenser-small3.png" alt="mini logo"></a>
           </li>
+        {{#if user}}          
           <li>
             <p><a href="/">Home</a></p>
           </li>
@@ -64,12 +64,12 @@
     </nav>
 
     
-
-    {{{body}}}
-    
+    <main>
+      {{{body}}}
+    </main>
     <div class="footer">
 
-    <footer style="height:40px; background-color:rgba(255, 255, 255, 0.096);">
+    <footer style="height:70px; background-color:rgba(255, 255, 255, 0.096);">
       <h1> Ironhack | ritaCunha && joãoBálico | web-dev 2022</h1>
     </footer>
 </div>

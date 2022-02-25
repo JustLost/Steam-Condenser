@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
 body {
-  padding: 50px;
+  
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-size: 2.5vh;
   background-color: black;
   color: white;
   font-family: 'Oswald', sans-serif;
+  min-height: 100vh;
+  
+
 }
 
 .image-cropper {
@@ -17,6 +20,9 @@ body {
   border-radius: 50%;
 }
 
+main{
+  min-height: 70vh;
+}
 
 .flex-row-class {
   display: flex;
@@ -25,8 +31,8 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid green 1px;
-  height: 40px;
-  margin-top: -15px;
+  height: 70px;
+  padding: 8px;
 }
 
 .flex-ul {
@@ -377,9 +383,7 @@ input {
   flex-wrap: wrap;
 }
 
-.profile-label {
-  padding-left: 15px;
-}
+
 
 .form-tags {
   display: flex;
@@ -437,10 +441,15 @@ input {
     
 }
 
+.index-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .SClogo{
-  margin: 35px;
+  margin: 35px auto;
   margin-bottom: -60px;
-  margin-left: 500px;
+ 
 }
 
 .mini-logo{
@@ -485,8 +494,11 @@ input {
 }
 
 .footer {
-  padding-top: 25vh;
   font-size: 10px;
+  /* position: absolute; */
+  margin-top: 60px;
+  bottom: 0;
+  width: 100vw;
 }
 .footer h1 {
   border-top: green 2px solid;
@@ -494,6 +506,7 @@ input {
   font-weight: 300;
   text-align: center;
   color: gray;
+  padding: 20px;
 }
 
 .profile-section {
