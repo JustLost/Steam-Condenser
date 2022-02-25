@@ -617,3 +617,26 @@ input {
   padding-left: 80px;
  
 }
+
+.modal-body{
+   
+  overflow: auto; /* Enable scroll if needed */
+  
+  background-color: green; /* Black w/ opacity */
+}
+.modal-title{
+  color: rgba(0, 128, 0, 0.767);
+  font-weight: 580;
+  font-size: larger;
+}
+
+.modal button{
+  border-radius: 5px;
+  border: green solid;
+  color: green;
+}
+.modal button:hover{
+  background-color: green;
+  border: white solid;
+  color: white;
+}
