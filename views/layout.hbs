@@ -40,13 +40,14 @@
           <li>
             <p><a href="/profile">Profile</a></p>
           </li>
-          {{! <li>
-            <p><a href="/create-profile">Create Profile</a></p>
-          </li> }}
           <li>
             <form action="/auth/logout" method="post">
-              <button class="logout-button">Logout</button></form>
+            <button class="logout-button">Logout</button></form>
+              
           </li>
+          <div class="image-cropper user2" 
+          style="background-image:url('{{user.imageUrl}}')">      
+          </div>
         {{else}}
           <li>
             <p><a href="/auth/signup">Sign Up</a></p>

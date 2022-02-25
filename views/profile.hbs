@@ -4,18 +4,12 @@
     <h1>Profile Page</h1>
 
     <div class="image-cropper user" 
-    style="background-image:url('path/to/user/img.png')">
-      <img
-        class="rounded-img"
-        src="{{user.imageUrl}}"
-        alt="{{user.username}}"
-        style="width: 300px; max-height: 300px"
-      />
+    style="background-image:url('{{user.imageUrl}}')">      
     </div>
 
     <div class="profile-buttons">
       <h2>{{user.username}}</h2>
-      <button class="profile-button" type="submit"><a href="/profile/edit">Add Game Tags</a></button>
+      <button class="profile-button" type="submit"><a href="/profile/edit">Edit profile</a></button>
       <button class="profile-button" type="button" data-toggle="modal" data-target="#exampleModal">Delete Account</button>
 
 
@@ -61,3 +55,5 @@
         </div>
       {{/each}}
     </div>
+    
+    

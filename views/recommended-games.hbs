@@ -1,12 +1,16 @@
-<h1>Recommended Games</h1>
-
-<div class="games-container">
-{{#each games}}
-<img src="{{header_image}}" alt="{{name}}" style="margin: 10px">
-<a href="/game?name={{name}}">{{name}}</a>
-
-<form action="/profile/fav/{{_id}}" method="post">
-<button type="submit" id="fav-button" ></button>
-</form>
-{{/each}}
+<h1 class="recommended">Recommended Games</h1>
+<div class="profile-section">    
+    <div class="favorite-games-section">
+        <div class="flex-row">
+            {{#each games}}
+            <div class="recomended-card">
+                <img src="{{header_image}}" alt="{{name}}" style="margin: 10px">
+                <a href="/game?name={{name}}">{{name}}</a>
+                <form action="/profile/fav/{{_id}}" method="post">
+                <button type="submit" id="fav-button" ></button>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </div>
