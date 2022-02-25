@@ -32,7 +32,7 @@ const userSchema = new Schema(
     gameTags: {
       type: Array,
     },
-    favGames: [{ type: Schema.Types.ObjectId, unique:true, ref: 'topGame' }],
+    favGames: [{ type: Schema.Types.ObjectId, ref: 'topGame' }],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
