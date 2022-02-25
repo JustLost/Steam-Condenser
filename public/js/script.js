@@ -6,13 +6,18 @@ document.addEventListener(
   false
 );
 
-
 $(document).ready(function () {
   $("#game-search").autocomplete({
     source: async function (request, response) {
-      let data = await fetch(
-        `http://localhost:3000/search?query=${request.term}`
-      )
+      let data = await fetch(`http://localhost:3000/search?query=${request.term}`, {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Headers":
+            "Content-Type, Content-Range, Content-Disposition, Content-Description, x-requested-with, x-requested-by",
+          accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
         .then((results) => results.json())
         .then((results) =>
           results.map((result) => {
