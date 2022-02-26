@@ -660,6 +660,14 @@ input {
   color: white;
 }
 
+.nav-a{
+  color: white;
+}
+
+.nav-a:hover{
+  color: green;
+}
+
 .topnav {
   overflow: hidden;
 }
