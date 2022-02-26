@@ -447,9 +447,15 @@ input {
   align-items: center;
 }
 .SClogo{
-  margin: 35px auto;
-  margin-bottom: -60px;
- 
+  margin: 35px auto; 
+  max-width: 100%;
+  height: auto;
+  width: auto\9; 
+  padding-left: 80px;
+  padding-right: 80px;
+}
+#carouselExampleIndicators{
+  margin-top: -10px;
 }
 
 .mini-logo{
@@ -652,4 +658,21 @@ input {
   background-color: green;
   border: white solid;
   color: white;
+}
+
+
+
+.topnav {
+  overflow: hidden;
+}
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
 }

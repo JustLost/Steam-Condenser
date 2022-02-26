@@ -14,6 +14,8 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     {{! mongoatlas search - jquery }}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
     
@@ -22,14 +24,14 @@
 
   <body>
 
-    <nav class="flex-row-class">
-      <ul class="flex-row-class flex-ul">
+    <nav class="flex-row-class topnav" id="myTopnav">
+      <ul class="flex-row-class flex-ul ">
         <li>
-            <a href="/"><img class="mini-logo" src="/images//condenser-small3.png" alt="mini logo"></a>
+            <a href="/"><img class="mini-logo active" src="/images//condenser-small3.png" alt="mini logo"></a>
           </li>
         {{#if user}}          
           <li>
-            <p><a href="/">Home</a></p>
+            <a href="/" class="active">Home</a>
           </li>
           <li>
             <form action="/game" method="get" class="search-bar">
@@ -49,9 +51,15 @@
             <button class="logout-button">Logout</button></form>
               
           </li>
-          <a href="/profile"><div class="image-cropper user2" 
-          style="background-image:url('{{user.imageUrl}}')">      
+            <a href="/profile"><div class="image-cropper user2" 
+            style="background-image:url('{{user.imageUrl}}')">      
           </div></a>
+          <li>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          
           
         {{else}}
           <li>
@@ -59,8 +67,9 @@
           </li>
           <li>
             <p><a href="/auth/login">Login</a></p>
-          </li>
+          </li>         
         {{/if}}
+        
       </ul>      
     </nav>
 
