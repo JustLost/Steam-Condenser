@@ -30,9 +30,9 @@
             <a href="/"><img class="mini-logo active" src="/images//condenser-small3.png" alt="mini logo"></a>
           </li>
         {{#if user}}          
-          <li>
+          {{!-- <li>
             <a href="/" class="active">Home</a>
-          </li>
+          </li> --}}
           <li>
             <form action="/game" method="get" class="search-bar">
               <input name="name" id="game-search" type="text" placeholder="Search game"
@@ -67,7 +67,12 @@
           </li>
           <li>
             <p><a href="/auth/login">Login</a></p>
-          </li>         
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>      
         {{/if}}
         
       </ul>      

@@ -660,13 +660,18 @@ input {
   color: white;
 }
 
-
-
 .topnav {
   overflow: hidden;
 }
 .topnav .icon {
   display: none;
+}
+.topnav a.active {
+  color: white;
+}
+
+.topnav a.active:hover {
+  color: green;
 }
 
 @media screen and (max-width: 500px) {
