@@ -135,7 +135,7 @@ router.post("/profile/fav/:id", (req, res, next) => {
 
   User.findByIdAndUpdate(user._id, { $push: { favGames: id } }, { new: true })
     .then((updatedUser) => {
-      console.log(updatedUser);
+      res.redirect("back");
     })
     .catch((err) => console.log(err));
 });
