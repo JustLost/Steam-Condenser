@@ -49,9 +49,10 @@
             <button class="logout-button">Logout</button></form>
               
           </li>
-          <div class="image-cropper user2" 
+          <a href="/profile"><div class="image-cropper user2" 
           style="background-image:url('{{user.imageUrl}}')">      
-          </div>
+          </div></a>
+          
         {{else}}
           <li>
             <p><a href="/auth/signup">Sign Up</a></p>
