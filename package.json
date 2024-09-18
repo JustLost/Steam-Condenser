@@ -19,7 +19,7 @@
     "express-session": "^1.17.2",
     "hbs": "^4.2.0",
     "mongodb": "^4.4.0",
-    "mongoose": "^6.2.2",
+    "mongoose": "^7.0.0",
     "morgan": "^1.10.0",
     "multer": "^2.0.0-rc.4",
     "multer-storage-cloudinary": "^4.0.0",
