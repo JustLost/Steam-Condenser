@@ -1,5 +1,5 @@
 {
-  "name": "project2",
+  "name": "steam_condenser",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -21,10 +21,12 @@
     "mongodb": "^4.4.0",
     "mongoose": "^6.2.2",
     "morgan": "^1.10.0",
-    "multer": "^1.4.4",
+    "multer": "^2.0.0-rc.4",
     "multer-storage-cloudinary": "^4.0.0",
-    "nodemon": "^2.0.15",
     "serve-favicon": "^2.5.0",
     "steamapi": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.5"
   }
 }
